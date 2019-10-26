@@ -6,7 +6,12 @@ import java.io.IOException;
 
 public class AirportWritableComparable implements WritableComparable<AirportWritableComparable> {
     public int airportID;
-    public int flightID;
+    public int key;
+
+    public AirportWritableComparable(int airportID, int key){
+        this.airportID = airportID;
+        this.key = key;
+    }
 
     @Override
     public int compareTo(AirportWritableComparable airportWritableComparable) {

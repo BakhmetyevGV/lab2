@@ -19,10 +19,12 @@ public class Time {
     public static void main(String[] args) throws Exception { 
         Job job = Job.getInstance();
 
-        MultipleInputs.addInputPath(job, new Path("664600583_T_ONTIME_sample.csv"),
-                TextInputFormat.class, FlightMapper.class);
+        MultipleInputs.addInputPath(job, new Path("L_AIRPORT_ID.csv"),
+                TextInputFormat.class, AirportMapper.class);
 
         MultipleInputs.addInputPath(job, new Path("664600583_T_ONTIME_sample.csv"),
                 TextInputFormat.class, FlightMapper.class);
+
+        
     } 
 }

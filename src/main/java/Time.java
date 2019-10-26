@@ -12,12 +12,14 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer; 
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Time {
     public static void main(String[] args) throws Exception { 
         Job job = Job.getInstance();
 
-        MultipleInputs.addInputPath(job, "664600583_T_ONTIME_sample.csv", );
+        MultipleInputs.addInputPath(job, new Path("664600583_T_ONTIME_sample.csv"),
+                TextInputFormat.class, FlightMapper.class);
     } 
 }

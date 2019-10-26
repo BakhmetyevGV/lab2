@@ -25,6 +25,6 @@ public class Time {
         MultipleInputs.addInputPath(job, new Path("664600583_T_ONTIME_sample.csv"),
                 TextInputFormat.class, FlightMapper.class);
 
-        
+
     } 
 }

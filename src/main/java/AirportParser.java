@@ -1,9 +1,10 @@
 import
 
 public class AirportParser  {
-    public String[] parse(String data){
+    public String[] parse(String data, String delimeter){
         String[] columns = {};
-        columns = data.split()
+        columns = data.split(delimeter);
+
 
         return columns;
     }

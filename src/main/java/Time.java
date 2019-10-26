@@ -18,6 +18,6 @@ public class Time {
     public static void main(String[] args) throws Exception { 
         Job job = Job.getInstance();
 
-        MultipleInputs.addInputPath(job, );
+        MultipleInputs.addInputPath(job, "664600583_T_ONTIME_sample.csv", );
     } 
 }

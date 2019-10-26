@@ -14,17 +14,23 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     }
 
     @Override
-    public int compareTo(AirportWritableComparable airportWritableComparable) {
-        return 0;
+    public int compareTo(AirportWritableComparable other) {
+        if (this.airportID == other.airportID) {
+            return this.key - other.key;
+        } else {
+            return this.airportID - other.airportID;
+        }
     }
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-
+        dataOutput.writeInt(this.airportID);
+        dataOutput.writeInt(this.key);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-
+        this.airportID = dataInput.readInt();
+        this.key = dataInput.readInt();
     }
 }

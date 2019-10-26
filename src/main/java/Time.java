@@ -15,8 +15,8 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Time {
     public static void main(String[] args) throws Exception { 
-       Job job = Job.getInstance();
+        Job job = Job.getInstance();
 
-        System.out.println("23");
+
     } 
 }

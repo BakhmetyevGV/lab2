@@ -1,2 +1,2 @@
-public class AirportParser {
+public class AirportParser  {
 }

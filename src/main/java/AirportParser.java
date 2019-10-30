@@ -3,11 +3,11 @@ import java.util.Arrays;
 public class AirportParser  {
     private String[] EMPTY = {};
 
-    public String[] parse(String data, String delimeter){
+    public static String[] parse(String data, String delimeter){
         return removeQuotes(split(data, delimeter));
     }
 
-    private String[] split(String data, String delimeter){
+    private static String[] split(String data, String delimeter){
         String[] columns = {};
 
         columns = data.split(delimeter, 2);
@@ -18,7 +18,7 @@ public class AirportParser  {
         return columns;
     }
 
-    private String[] removeQuotes(String[] data){
+    private static String[] removeQuotes(String[] data){
         for(int i = 0; i < data.length; i++){
             data[i] = data[i].replaceAll("\"", "");
         }

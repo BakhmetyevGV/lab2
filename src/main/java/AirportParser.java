@@ -17,5 +17,7 @@ public class AirportParser  {
         for(int i = 0; i < data.length; i++){
             data[i] = data[i].replaceAll("\"", "");
         }
+
+        return data;
     }
 }

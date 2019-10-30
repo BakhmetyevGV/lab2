@@ -7,6 +7,15 @@ import static java.sql.Types.DOUBLE;
 
 public class Reducer extends org.apache.hadoop.mapreduce.Reducer<AirportWritableComparable, Text, Text, Text> {
 
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
+
     @Override
     protected void reduce(AirportWritableComparable key, Iterable<Text> values, Context context)
             throws IOException, InterruptedException {
@@ -25,7 +34,13 @@ public class Reducer extends org.apache.hadoop.mapreduce.Reducer<AirportWritable
                 num++;
                 continue;
             }
-            if(s.)
+            if(!isNumeric(s)){
+                name = s;
+                num++;
+                continue;
+            }
+            if( Double.parseDouble(s) > max)
+                max = Double.parseDouble(s);
         }
     }
 }

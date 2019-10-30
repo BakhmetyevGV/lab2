@@ -30,6 +30,15 @@ public class Time {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
         job.setPartitionerClass(Partitioner.class);
+        job.setGroupingComparatorClass(GroupingComparator.class);
+        job.setReducerClass(Reducer.class);
+        job.setMapOutputKeyClass(AirportWritableComparable.class);
+
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(Text.class);
+        job.setNumReduceTasks(2);
+
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
 
     } 
 }

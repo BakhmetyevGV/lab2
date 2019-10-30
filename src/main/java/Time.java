@@ -20,7 +20,7 @@ public class Time {
         Job job = Job.getInstance();
 
         job.setJarByClass(Time.class);
-        
+
         MultipleInputs.addInputPath(job, new Path("L_AIRPORT_ID.csv"),
                 TextInputFormat.class, AirportMapper.class);
 

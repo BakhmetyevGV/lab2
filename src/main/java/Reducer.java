@@ -52,7 +52,7 @@ public class Reducer extends org.apache.hadoop.mapreduce.Reducer<AirportWritable
         double avg = 0;
         try{
             avg = sum / (double) num;
-            context.write(new Text(name), new Text("min= " + min + " | max= " + max + " | avg= " + avg));
+            context.write(new Text(name), new Text("max= " + max + " | min= " + min + " | avg= " + avg));
         } catch (Exception e){
             System.out.println(e);
             return;

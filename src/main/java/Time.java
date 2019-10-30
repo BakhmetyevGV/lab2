@@ -21,12 +21,13 @@ public class Time {
 
         job.setJarByClass(Time.class);
 
-        MultipleInputs.addInputPath(job, new Path("L_AIRPORT_ID.csv"),
+        MultipleInputs.addInputPath(job, new Path(args[0]),
                 TextInputFormat.class, AirportMapper.class);
 
-        MultipleInputs.addInputPath(job, new Path("664600583_T_ONTIME_sample.csv"),
+        MultipleInputs.addInputPath(job, new Path(args[1]),
                 TextInputFormat.class, FlightMapper.class);
 
+        FileOutputFormat.setOutputPath(job, args[2]);
 
     } 
 }

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class AirportParser  {
-    private String[] EMPTY = {};
+    private static String[] EMPTY = {};
 
     public static String[] parse(String data, String delimeter){
         return removeQuotes(split(data, delimeter));

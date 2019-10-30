@@ -1,15 +1,15 @@
 import java.util.Arrays;
 
 public class FlightParser  {
-    private String[] EMPTY = {};
-    private int DELAY = 18;
-    private int CANCEL = 19;
+    private static String[] EMPTY = {};
+    private static int DELAY = 18;
+    private static int CANCEL = 19;
 
-    public String[] parse(String data, String delimeter){
+    public static String[] parse(String data, String delimeter){
         return removeQuotes(split(data, delimeter));
     }
 
-    private String[] split(String data, String delimeter){
+    private static String[] split(String data, String delimeter){
         String[] columns = {};
 
         columns = data.split(delimeter);
@@ -20,7 +20,7 @@ public class FlightParser  {
         return columns;
     }
 
-    private String[] removeQuotes(String[] data){
+    private static String[] removeQuotes(String[] data){
         for(int i = 0; i < data.length; i++){
             data[i] = data[i].replaceAll("\"", "");
         }

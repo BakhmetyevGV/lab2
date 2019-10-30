@@ -27,7 +27,7 @@ public class Time {
         MultipleInputs.addInputPath(job, new Path(args[1]),
                 TextInputFormat.class, FlightMapper.class);
 
-        FileOutputFormat.setOutputPath(job, args[2]);
+        FileOutputFormat.setOutputPath(job, Path(args[2]));
 
     } 
 }

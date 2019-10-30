@@ -2,6 +2,11 @@ import java.util.Arrays;
 
 public class AirportParser  {
     private String[] EMPTY = {};
+
+    public String[] parse(String data, String delimeter){
+        return removeQuotes(split(data, delimeter));
+    }
+
     private String[] split(String data, String delimeter){
         String[] columns = {};
 

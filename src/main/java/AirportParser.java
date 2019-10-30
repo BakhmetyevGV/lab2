@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class AirportParser  {
     private String[] EMPTY = {};
-    public String[] split(String data, String delimeter){
+    private String[] split(String data, String delimeter){
         String[] columns = {};
 
         columns = data.split(delimeter, 2);
@@ -11,5 +11,11 @@ public class AirportParser  {
             return EMPTY;
 
         return columns;
+    }
+
+    private String[] removeQuotes(String[] data){
+        for(int i = 0; i < data.length; i++){
+            data[i] = data[i].replaceAll("\"", "");
+        }
     }
 }

@@ -7,7 +7,7 @@ public class AirportParser  {
 
         columns = data.split(delimeter, 2);
 
-        if(columns[0] == "Code")
+        if(columns[0].equals("Code"))
             return EMPTY;
 
         return columns;

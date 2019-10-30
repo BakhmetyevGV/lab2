@@ -29,5 +29,7 @@ public class Time {
 
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
+        job.setPartitionerClass(Partitioner.class);
+
     } 
 }

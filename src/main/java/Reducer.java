@@ -41,6 +41,20 @@ public class Reducer extends org.apache.hadoop.mapreduce.Reducer<AirportWritable
             }
             if( Double.parseDouble(s) > max)
                 max = Double.parseDouble(s);
+            if( Double.parseDouble(s) < min)
+                min = Double.parseDouble(s);
+
+            sum += Double.parseDouble(s);
+            num++;
         }
+        double avg = 0;
+        try{
+            avg = sum / (double) num;
+            context.write(new Text(name), new Text("min= " + min + " | max= " + max + " | avg= " + avg));
+        } catch (Exception e){
+            System.out.println(e);
+            return;
+        }
+
     }
 }

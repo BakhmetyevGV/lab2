@@ -8,7 +8,9 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
 
     @Override
     protected void map(LongWritable a, Text data, Context context) throws IOException {
-        String str = AirportParser.parse(data.toString())
+        String[] parsed = AirportParser.parse(data.toString(),",");
+
+        context.write()
     }
 
 }
